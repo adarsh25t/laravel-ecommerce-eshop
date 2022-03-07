@@ -1,0 +1,75 @@
+:root{
+    --main-color:rgb(199, 0, 0);
+    --text-color:#fff;
+    --btn-color:black;
+}
+/*
+    1. navbar - 11
+    2. login & register - 66
+ */
+
+/* --------------------------------navbar ----------------------------------------------------- */
+nav{
+    display: flex;
+    padding-left: 70px;
+    padding-right: 70px;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    font-family: 'Poppins', sans-serif;
+}
+nav .title{
+    font-size: 20px;
+    color: var(--text-color);
+    color: var(--text-color);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+nav .title:hover{
+    color: var(--text-color);
+}
+.search-form{
+    position: relative;
+}
+.search-form span{
+    position: absolute;
+    right: 10px;
+    top: 6px;
+}
+.search-form input{
+    width: 500px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.nav-actions a{
+    background-color: var(--btn-color);
+    padding: 8px 25px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+}
+.nav-actions a:hover{
+    color: var(--text-color);
+}
+
+@media screen and (max-width:720px) {
+    .search-form{
+        display: none;
+    }
+}
+
+/* -----------------------------login and register ----------------------------------------- */
+.auth_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.auth-body{
+    
+}
