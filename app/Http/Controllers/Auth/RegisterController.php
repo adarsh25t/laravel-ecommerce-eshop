@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -22,14 +23,23 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use AuthenticatesUsers;
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
+
+   protected function authenticated(){
+       if(Auth::user()->user_type == '1'){
+            return redirect('dashboard');
+       }
+       else if(Auth::user()->user_type == '0'){
+           return redirect('/');
+       }
+   }
 
     /**
      * Create a new controller instance.

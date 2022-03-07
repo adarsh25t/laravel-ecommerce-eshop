@@ -2,11 +2,13 @@
     --main-color:rgb(199, 0, 0);
     --text-color:#fff;
     --btn-color:black;
+    --second-color:rgb(0, 13, 126);
 }
 /*
     1. navbar - 11
     2. login & register - 66
  */
+
 
 /* --------------------------------navbar ----------------------------------------------------- */
 nav{
@@ -56,7 +58,24 @@ nav .title:hover{
 .nav-actions a:hover{
     color: var(--text-color);
 }
-
+.drop-btns{
+    background-color: var(--btn-color) !important;
+    color: var(--text-color) !important;
+}
+.dropdown-menu li{
+    position: relative;
+}
+.dropdown-menu li a{
+    background: none !important;
+    color: var(--btn-color) !important;
+    margin-left: 10px !important;
+}
+.dropdown-menu li i{
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   color: var(--second-color);
+} 
 @media screen and (max-width:720px) {
     .search-form{
         display: none;
@@ -64,12 +83,37 @@ nav .title:hover{
 }
 
 /* -----------------------------login and register ----------------------------------------- */
-.auth_form{
+.auth-body{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 80vh;
 }
-.auth-body{
-    
+.auth-body form{
+    display: flex;
+    flex-direction: column;
+    width: 400px !important;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.747);
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.auth_form label{
+    font-size: 15px;
+    padding-bottom: 8px !important;
+}
+.auth_form input{
+    border: 1px solid rgba(0, 0, 0, 0.466);
+    outline: none !important;
+}
+.next_page{
+   text-align: center;
+   font-size: 14px;
+   font-weight: bold;
+}
+.auth_btn{
+    background-color: var(--btn-color) !important;
+    color: var(--text-color) !important;
+}
+.auth_form .remember{
+    color: var(--second-color);
 }
