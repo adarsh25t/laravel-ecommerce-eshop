@@ -28,4 +28,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard',[FrontendController::class,'index'])->name('dashboard');
 
     Route::get('categories',[CategoryController::class,"index"]);
+    Route::get('add-categories',[CategoryController::class,"add"]);
+    Route::post('insert-category',[CategoryController::class,"insert"]);
 });

@@ -8,7 +8,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('admin/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/css/vendor.bundle.base.css') }}">
-   
+    <script src="https://kit.fontawesome.com/ea94151992.js" crossorigin="anonymous"></script>
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('admin/style.css') }}">
     <!-- End layout styles -->
@@ -16,20 +16,9 @@
 </head>
 <body>
     @include('sections.adminNavbar')
-    <div class="container-fluid page-body-wrapper">
-        @include('sections.adminSidebar')
-
-        <div class="main-panel">
-           @yield('Home')
-           @yield('category')
-            <footer class="footer">
-                <div class="container-fluid d-flex justify-content-between">
-                  <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © Eshop.com 2022</span>
-                  
-                </div>
-              </footer>
-        </div>
-    </div>
+    @yield('category')
+    @yield('Home')
+    @yield('add-category')
 <!-- plugins:js -->
 <script src="{{ asset('admin/vendors/js/vendor.bundle.base.js') }}"></script>
 <!-- endinject -->
