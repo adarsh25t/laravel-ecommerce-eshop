@@ -24,6 +24,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard',function(){
-        return "admin";
+        return view('admin.dashboard');
     });
 });
