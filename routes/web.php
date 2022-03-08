@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminCOntroller;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +25,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard',function(){
-        return view('admin.dashboard');
-    });
+    Route::get('/dashboard',[FrontendController::class,'index'])->name('dashboard');
+
+    Route::get('categories',[CategoryController::class,"index"]);
 });

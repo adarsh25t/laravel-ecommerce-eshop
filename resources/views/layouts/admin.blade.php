@@ -20,9 +20,8 @@
         @include('sections.adminSidebar')
 
         <div class="main-panel">
-            @include('admin.adminHome')
-
-
+           @yield('Home')
+           @yield('category')
             <footer class="footer">
                 <div class="container-fluid d-flex justify-content-between">
                   <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © Eshop.com 2022</span>
