@@ -1,0 +1,28 @@
+:root{
+    --icon-color:#b66dff;
+    --btn-color:#fe7c96;
+}
+
+.add_btns{
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 17px;
+    text-decoration: none;
+}
+.add_btns:nth-child(1){
+    color: var(--icon-color);
+}
+.add_btns:nth-child(2){
+    color: var(--btn-color);
+}
+
+/* --------------------------------------edit categories ------------------------------------ */
+.edit-image{
+    width: 100px;
+    height: 100px;
+}
+.edit-image img{
+    width: 100%;
+}

@@ -91,8 +91,8 @@
                       <td> {{ $category->name }} </td>
                       <td>{{ $category->description }}</td>
                       <td> 
-                        <button class="btn btn-dark">Edit</button> 
-                        <button class="btn btn-danger">Delete</button>
+                        <a href="{{ url('editcategory/'.$category->id) }}" class="add_btns"><i class="far fa-edit"></i></a>
+                        <button class="add_btns"><i class="far fa-trash-alt"></i></button>
                       </td>
                     </tr>
                  @endforeach
