@@ -39,7 +39,7 @@ class CategoryController extends Controller
         $category->meta_title = $request->input('metaTitle');
         $category->meta_keywords = $request->input('metaKeywords');
         $category->save();
-        return redirect('/categories');
+        return redirect('/categories')->with('status',"category insert successfully");;
     }
 
     public function editCategory($id)
@@ -76,6 +76,18 @@ class CategoryController extends Controller
         $category->meta_keywords = $request->input('metaKeywords');
         $category->update();
 
-        return redirect('/categories');
+        return redirect('/categories')->with('status',"category update successfully");;
+    }
+
+    public function deleteCategory($id, Request $request)
+    {
+        $category = Category::find($id);
+        $path = 'assets/uploads/category/'.$request->image;
+        if(File::exists($path)){
+            File::delete($path);
+        }
+        $category->delete();
+        return redirect('/categories')->with('status',"category delete successfully");
+
     }
 }

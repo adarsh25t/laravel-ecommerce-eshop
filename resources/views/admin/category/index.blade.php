@@ -92,16 +92,10 @@
                       <td>{{ $category->description }}</td>
                       <td> 
                         <a href="{{ url('editcategory/'.$category->id) }}" class="add_btns"><i class="far fa-edit"></i></a>
-                        <button class="add_btns"><i class="far fa-trash-alt"></i></button>
+                        <a href="{{ url('deletecategory/'.$category->id) }}" class="add_btns"><i class="far fa-trash-alt"></i></a>
                       </td>
                     </tr>
-                 @endforeach
-                  
-                 
-                  
-                 
-                  
-                 
+                 @endforeach 
                 </tbody>
               </table>
             </div>
@@ -115,6 +109,12 @@
         </footer>
   </div>
 </div>
- 
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (session('status'))
+  <script>
+    swal("{{ session('status') }}");
+  </script>
+@endif
 @endsection
+
