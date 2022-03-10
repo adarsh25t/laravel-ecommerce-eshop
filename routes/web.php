@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminCOntroller;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,4 +34,12 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('editcategory/{id}',[CategoryController::class,"editCategory"]);
     Route::put('update-category/{id}',[CategoryController::class,"updateCategory"]);
     Route::get('deletecategory/{id}',[CategoryController::class,'deleteCategory']);
+
+
+    Route::get('products',[ProductController::class,"index"]);
+    Route::get('add-product',[ProductController::class,"add"]);
+    Route::post('insert-product',[ProductController::class,"addProduct"]);
+    Route::get('editproduct/{id}',[ProductController::class,"editProduct"]);
+    Route::put('update-product/{id}',[ProductController::class,'updateProduct']);
+    Route::get('deleteproduct/{id}',[ProductController::class,"deleteProduct"]);
 });

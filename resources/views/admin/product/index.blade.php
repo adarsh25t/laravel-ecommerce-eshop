@@ -25,8 +25,8 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('add-categories') }}">
-          <span class="menu-title">Add Category</span>
+        <a class="nav-link" href="{{ url('add-product') }}">
+          <span class="menu-title">Add Product</span>
           <i class="mdi mdi-contacts menu-icon"></i>
         </a>
       </li>
@@ -39,7 +39,7 @@
         <h3 class="page-title">
           <span class="page-title-icon bg-gradient-primary text-white me-2">
             <i class="mdi mdi-home"></i>
-          </span> Categories
+          </span> Products
         </h3>
       </div>
   
@@ -56,16 +56,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                 @foreach ($categories as $category)
+                 @foreach ($products as $item)
                     <tr>
                       <td class="py-1">
-                        <img src="{{ asset('assets/uploads/category/'.$category->image) }}" alt="image" />
+                        <img src="{{ asset('assets/uploads/products/'.$item->image) }}" alt="image" />
                       </td>
-                      <td> {{ $category->name }} </td>
-                      <td>{{ $category->description }}</td>
+                      <td> {{ $item->name }} </td>
+                      <td>{{ $item->description }}</td>
                       <td> 
-                        <a href="{{ url('editcategory/'.$category->id) }}" class="add_btns"><i class="far fa-edit"></i></a>
-                        <a href="{{ url('deletecategory/'.$category->id) }}" class="add_btns"><i class="far fa-trash-alt"></i></a>
+                        <a href="{{ url('editproduct/'.$item->id) }}" class="add_btns"><i class="far fa-edit"></i></a>
+                        <a href="{{ url('deleteproduct/'.$item->id) }}" class="add_btns"><i class="far fa-trash-alt"></i></a>
                       </td>
                     </tr>
                  @endforeach 
