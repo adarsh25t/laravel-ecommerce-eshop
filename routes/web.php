@@ -43,3 +43,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('update-product/{id}',[ProductController::class,'updateProduct']);
     Route::get('deleteproduct/{id}',[ProductController::class,"deleteProduct"]);
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

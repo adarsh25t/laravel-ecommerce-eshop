@@ -51,7 +51,7 @@
                   <tr>
                     <th> Image </th>
                     <th> Name </th>
-                    <th> Description </th>
+                    <th> small Text </th>
                     <th> Actions </th>
                   </tr>
                 </thead>
@@ -62,7 +62,7 @@
                         <img src="{{ asset('assets/uploads/products/'.$item->image) }}" alt="image" />
                       </td>
                       <td> {{ $item->name }} </td>
-                      <td>{{ $item->description }}</td>
+                      <td>{{ $item->small_text }}</td>
                       <td> 
                         <a href="{{ url('editproduct/'.$item->id) }}" class="add_btns"><i class="far fa-edit"></i></a>
                         <a href="{{ url('deleteproduct/'.$item->id) }}" class="add_btns"><i class="far fa-trash-alt"></i></a>

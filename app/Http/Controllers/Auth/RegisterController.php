@@ -23,23 +23,24 @@ class RegisterController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    //protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::HOME;
+
 
    protected function authenticated(){
-       if(Auth::user()->user_type == '1'){
-            return redirect('dashboard');
-       }
-       else if(Auth::user()->user_type == '0'){
-           return redirect('/');
-       }
-   }
+    if(Auth::user()->user_type == '1'){
+         return redirect('dashboard');
+    }
+    else if(Auth::user()->user_type == '0'){
+        return redirect('/');
+    }
+}
 
     /**
      * Create a new controller instance.
