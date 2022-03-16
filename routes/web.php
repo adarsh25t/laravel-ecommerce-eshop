@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\CategoryController as UserCategoryController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/view-categorie-items/{name}',[UserCategoryController::class,"index"]);
 Route::get('/viewProduct/{name}',[UserCategoryController::class,'view']);
+Route::middleware(['auth'])->group(function () {
+    Route::post('/add-to-cart',[UserCategoryController::class,'addCart']);
+
+});
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
