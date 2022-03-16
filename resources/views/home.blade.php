@@ -2,6 +2,7 @@
 
 @section('content')
 <div>
+  @include('sections.categories')
    @include('user.slider')
    <div class="container mt-3">
     <div class="home-demo">
