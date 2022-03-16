@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminCOntroller;
+
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\CategoryController as UserCategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/view-categorie-items/{name}',[UserCategoryController::class,"index"]);
+Route::get('/viewProduct/{name}',[UserCategoryController::class,'view']);
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {

@@ -41,6 +41,8 @@
         @include('sections.navbar')
         <main class="">
             @yield('content')
+            @yield('view-category')
+            @yield('viewProduct')
         </main>
     </div>
     

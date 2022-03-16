@@ -62,16 +62,21 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        $path = 'assets/uploads/products/'.$request->image;
-            if(File::exists($path)){
-                File::delete($path);
-            }
+        
+            if($request->hasFile('image'))
+            {
+                $path = 'assets/uploads/products/'.$request->image;
+                if(File::exists($path)){
+                    File::delete($path);
+                }
+                $file = $request->file('image');
+                $text = $file->getClientOriginalExtension();
+                $fileName = time()."-".$text;
+                $file->move('assets/uploads/products/',$fileName);
+                $product->image = $fileName;
+            }    
 
-        $file = $request->file('image');
-        $text = $file->getClientOriginalExtension();
-        $fileName = time()."-".$text;
-        $file->move('assets/uploads/products/',$fileName);
-        $product->image = $fileName;
+        
         
         $product->cate_id = $request->input('cate_id');
         $product->name = $request->input('Name');
