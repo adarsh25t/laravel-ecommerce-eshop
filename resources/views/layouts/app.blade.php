@@ -43,6 +43,7 @@
             @yield('content')
             @yield('view-category')
             @yield('viewProduct')
+            @yield('cart')
         </main>
     </div>
     

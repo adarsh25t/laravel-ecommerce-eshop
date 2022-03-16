@@ -28,9 +28,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/view-categorie-items/{name}',[UserCategoryController::class,"index"]);
 Route::get('/viewProduct/{name}',[UserCategoryController::class,'view']);
+Route::post('/add-to-cart',[UserCategoryController::class,'addCart']);
 Route::middleware(['auth'])->group(function () {
-    Route::post('/add-to-cart',[UserCategoryController::class,'addCart']);
-
+    Route::get('/cart',[HomeController::class,'cart']);
 });
 
 
